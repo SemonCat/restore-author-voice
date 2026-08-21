@@ -10,7 +10,7 @@
 
 ## Change
 
-Remove generic era-setting openings, empty “not just a tool but a revolution” claims, unsourced precise metrics, empty three-step exhortations, generic optimistic conclusions, and “希望這對你有幫助” from article body. Mark missing facts or sources instead of inventing them.
+Remove generic era-setting openings, empty “not just a tool but a revolution” claims, unsourced precise metrics, empty three-step exhortations, generic optimistic conclusions, and empty chatbot sign-offs from article body. Mark missing facts or sources instead of inventing them.
 
 ## Preserve
 
