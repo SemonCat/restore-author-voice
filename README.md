@@ -2,7 +2,7 @@
 
 [繁體中文](README.zh-TW.md)
 
-`restore-author-voice` is an agent skill for drafting and editing prose without replacing the author with a generic "human" voice.
+`restore-author-voice` is an agent skill for drafting and editing prose without replacing the author with a generic "human" voice. It repairs the deepest damaged layer first: architecture, discourse, venue fit, then surface language.
 
 It treats style as evidence. A draft, explicit direction, or a set of attributable writing samples can show how an author makes claims, handles uncertainty, and moves through an argument. When that evidence is missing, the skill stays within the genre instead of inventing a persona.
 
@@ -12,13 +12,15 @@ It treats style as evidence. A draft, explicit direction, or a set of attributab
 - rewrites while preserving facts, stance, uncertainty, quotations, and constraints
 - diagnoses where editing erased useful authorship
 - removes common AI-writing patterns without turning them into a global blacklist
+- repairs structural and paragraph-flow problems before polishing sentences
+- matches professional prose to its venue, including release notes, developer replies, postmortems, tickets, and technical articles
 - applies language-specific guidance for English and Traditional Chinese used in Taiwan
 
 The skill has four modes: `diagnose`, `cleanup`, `rewrite`, and `draft`. A cleanup should stay small. A rewrite can change the structure, but it still has to pass the same preservation checks.
 
 ## Why it works this way
 
-Removing a few stock phrases does not recover an author's voice. It can leave a shorter draft that still sounds interchangeable.
+Removing a few stock phrases does not recover an author's voice. It can leave a shorter draft with the same machine-shaped structure and still sound interchangeable.
 
 This skill starts with source boundaries: what is fact, what is judgment, what remains uncertain, and which details cannot move. It then looks for author evidence in the wording and the material itself. The final author-swap test asks a blunt question: could the same passage appear under a plausible peer's name without changing anything?
 
@@ -58,6 +60,8 @@ For a recurring author or brand, start with [`templates/author-profile.md`](temp
 
 - [`SKILL.md`](SKILL.md): modes, workflow, and hard guardrails
 - [`references/diagnostic-lens.md`](references/diagnostic-lens.md): identity, rhythm, semantics, genre, and the author-swap test
+- [`references/structure-and-discourse.md`](references/structure-and-discourse.md): architecture, paragraph questions, pacing, and depth decisions
+- [`references/venue-guides.md`](references/venue-guides.md): rules for common professional writing venues
 - [`references/ai-patterns.md`](references/ai-patterns.md): diagnostic signals for common AI-writing habits
 - [`references/en.md`](references/en.md): English locale, mechanics, register, and voice boundaries
 - [`references/zh-tw.md`](references/zh-tw.md): Traditional Chinese guidance for readers in Taiwan
