@@ -1,0 +1,24 @@
+id: restore-author-voice-positive-declared-voice
+name: Preserve an explicitly declared voice move
+description: A compatible venue and voice guide should compose without generic cleanup erasing the deliberate ending.
+tags:
+  - positive-trigger
+  - voice-composition
+inputs:
+  prompt: |
+    This is an eval. Do not use tools. Rewrite this for an internal engineering chat. Apply the declared voice guide: clipped sentences are intentional, no bullets, and end exactly with “Fine. Ship it.” Preserve every fact.
+
+    AI draft: We are pleased to share that the canary rollout has reached 5%. At 21:15, p95 latency increased from 180 ms to 240 ms, so we are proactively pausing the rollout while we continue to monitor the situation.
+expected:
+  should_trigger: true
+graders:
+  - type: code
+    name: composes-voice-with-evidence
+    config:
+      assertions:
+        - "'5%' in output"
+        - "'21:15' in output"
+        - "'180' in output and '240' in output"
+        - "output.rstrip().endswith('Fine. Ship it.')"
+        - "not any(line.startswith('- ') for line in output.splitlines())"
+        - "len(tool_calls) <= 1"

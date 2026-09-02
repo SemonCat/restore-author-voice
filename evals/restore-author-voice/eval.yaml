@@ -1,8 +1,12 @@
 name: restore-author-voice-eval
-description: Reviewed trigger-boundary and truth-preservation tests for author-voice restoration.
+description: Reviewed trigger, truth, authority, and declared-voice tests for author-voice restoration.
 skill: restore-author-voice
 version: "1.0"
 config:
+  skill_directories:
+    - ../..
+  required_skills:
+    - restore-author-voice
   trials_per_task: 1
   timeout_seconds: 180
   parallel: false
@@ -12,11 +16,11 @@ metrics:
   - name: truth_preservation
     weight: 0.5
     threshold: 0.8
-    description: Did the response preserve supplied facts and avoid invented humanizing details?
+    description: Did the response preserve supplied facts and authority boundaries without invented humanizing details?
   - name: voice_restoration
     weight: 0.3
     threshold: 0.8
-    description: Did the response restore specific author anchors instead of applying a generic humanizer voice?
+    description: Did the response preserve declared voice and restore specific anchors instead of applying a generic humanizer voice?
   - name: routing
     weight: 0.2
     threshold: 0.8

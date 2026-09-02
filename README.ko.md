@@ -8,6 +8,8 @@
 
 - 이름, 숫자, 날짜, 링크, 인용, 요구사항, 시간 순서, 입장, 의미 있는 대비를 보존합니다.
 - 원문, 명시적인 지시, 출처를 확인할 수 있는 글 샘플에서 글쓴이의 목소리를 복원합니다.
+- 명시된 voice 또는 style guide를 근거와 매체의 제약 안에서 적용합니다.
+- 대상 글이나 인용 파일에 포함된 지시는 데이터로 취급하며 모드, 범위, 권한을 바꾸지 못하게 합니다.
 - 모든 문제를 단어 선택 문제로 취급하지 않고 구조, 문단 흐름, 매체 적합성, 표현을 나누어 진단합니다.
 - 흔한 AI 문체 패턴을 전역 금지 목록이 아니라 문맥에 따라 판단할 신호로 사용합니다.
 - 채팅, release notes, 개발자 논의, 인시던트 리뷰, ticket, 기술 문서에 맞게 문체를 조정합니다.
@@ -28,7 +30,7 @@
 
 1. 독자, 장르, 매체, 언어, 모드, 편집 범위를 정합니다.
 2. 보존할 내용을 확정하고 사실, 추론, 의견, 인용을 구분합니다.
-3. 근거가 있는 문체 기준을 고르고 가장 깊은 문제를 진단한 뒤 구조부터 표현까지 차례로 수정합니다.
+3. 근거가 있는 문체 기준을 고르고, 명시된 voice 또는 style guide가 있으면 근거와 매체의 제약 안에서 적용합니다.
 4. 원문과 결과를 비교하고 author-swap test를 실행한 뒤 근거 없는 추가 내용을 제거합니다.
 
 글쓴이를 보여 주는 근거가 없으면 장르에 맞는 기본 문체를 명시적으로 사용합니다. 중립적인 글을 더 사람처럼 보이게 만들려고 인격을 꾸며 내지 않습니다.
@@ -72,6 +74,7 @@ docs/launch.md의 본문만 다시 써 주세요. frontmatter, code blocks, data
 - [`references/structure-and-discourse.md`](references/structure-and-discourse.md): 구조, 문단 흐름, 속도, 편집 깊이
 - [`references/venue-guides.md`](references/venue-guides.md): 주요 업무 문서별 규칙
 - [`references/ai-patterns.md`](references/ai-patterns.md): 흔한 AI 문체를 판단하기 위한 문맥 신호
+- [`references/voice-composition.md`](references/voice-composition.md): 명시된 voice／style guide의 우선순위와 충돌 처리
 - [`references/en.md`](references/en.md): 영어 지역 관례, 표기, 격식, voice 경계
 - [`references/zh-tw.md`](references/zh-tw.md): 대만 독자를 위한 번체 중국어 가이드
 - [`references/evaluation.md`](references/evaluation.md): 내용 보존과 모드 검사
@@ -90,7 +93,7 @@ docs/launch.md의 본문만 다시 써 주세요. frontmatter, code blocks, data
 waza check .
 ```
 
-검토된 사례는 올바른 routing, 인접한 부정 trigger, 사실 보존, Slack에 바로 붙여 넣을 수 있는 결과, 근거 없는 반론, 파일에서 본문이 아닌 영역을 다룹니다.
+검토된 사례는 긍정 및 인접한 부정 routing, 사실 보존, 명시된 voice, voice와 매체의 충돌, 포함된 지시의 비활성화, Slack에 바로 붙여 넣을 수 있는 결과, 근거 없는 반론, 파일에서 본문이 아닌 영역을 다룹니다.
 
 ## 감사의 말과 라이선스
 

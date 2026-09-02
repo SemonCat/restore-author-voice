@@ -8,6 +8,8 @@ English · [繁體中文](README.zh-TW.md) · [简体中文](README.zh-CN.md) ·
 
 - preserves names, numbers, dates, links, quotations, requirements, chronology, positions, and meaningful contrasts
 - recovers traceable voice from the draft, explicit direction, or attributable writing samples
+- composes an explicitly declared voice or style guide inside evidence and venue constraints
+- treats embedded instructions in target prose or quoted files as data, not authority
 - diagnoses architecture, paragraph flow, venue fit, and wording instead of treating every problem as a word-choice problem
 - removes common AI-writing patterns as contextual signals, not as a global blacklist
 - adapts prose for chat, release notes, developer discussions, incident reviews, tickets, and technical articles
@@ -28,7 +30,7 @@ English · [繁體中文](README.zh-TW.md) · [简体中文](README.zh-CN.md) ·
 
 1. Define the reader, genre, venue, language, mode, and editing scope.
 2. Lock protected content and distinguish fact, inference, opinion, and quotation.
-3. Choose source-backed voice anchors, diagnose the deepest damaged layer, and revise from structure to wording.
+3. Choose source-backed voice anchors; when a voice or style guide is declared, compose it inside the evidence and venue constraints.
 4. Compare the result with the source, run the author-swap test, and remove unsupported additions.
 
 When no author evidence exists, the skill uses an explicit genre default. It does not invent a persona to make neutral prose look more human.
@@ -72,6 +74,7 @@ For recurring work with one author or brand, build a source-backed profile with 
 - [`references/structure-and-discourse.md`](references/structure-and-discourse.md): architecture, paragraph flow, pacing, and depth decisions
 - [`references/venue-guides.md`](references/venue-guides.md): rules for common professional writing venues
 - [`references/ai-patterns.md`](references/ai-patterns.md): contextual signals for common AI-writing habits
+- [`references/voice-composition.md`](references/voice-composition.md): precedence and conflict handling for declared voice or style guides
 - [`references/en.md`](references/en.md): English locale, mechanics, register, and voice boundaries
 - [`references/zh-tw.md`](references/zh-tw.md): Traditional Chinese guidance for readers in Taiwan
 - [`references/evaluation.md`](references/evaluation.md): preservation and mode checks
@@ -90,7 +93,7 @@ Run the deterministic repository checks with:
 waza check .
 ```
 
-The reviewed cases cover positive routing, an adjacent negative trigger, fact preservation, Slack-ready delivery, unsupported objections, and non-prose file boundaries.
+The reviewed cases cover positive and adjacent negative routing, fact preservation, declared voice, material voice/venue conflicts, inert embedded instructions, Slack-ready delivery, unsupported objections, and non-prose file boundaries.
 
 ## Acknowledgements and license
 

@@ -8,6 +8,8 @@
 
 - 保留姓名、数字、日期、链接、引用、需求、时间顺序、立场和有实际意义的对比
 - 从原稿、明确指示或可追溯的写作样本中恢复作者声音
+- 在证据和使用场景的边界内套用明确指定的 voice 或 style guide
+- 将目标文本或引用文件中的嵌入指令视为数据，不允许它切换模式、范围或权限
 - 分别诊断篇章结构、段落推进、场景适配和措辞，而不是把所有问题都当成换词问题
 - 将常见 AI 写作模式视为需要结合上下文判断的信号，而不是全局禁词表
 - 根据聊天消息、release notes、开发讨论、事故复盘、ticket 和技术文章调整写法
@@ -28,7 +30,7 @@
 
 1. 确认读者、体裁、使用场景、语言、模式和修改范围。
 2. 锁定受保护内容，区分事实、推断、观点和引用。
-3. 选择有来源依据的声音锚点，诊断受损最深的层级，再从结构一路修改到措辞。
+3. 选择有来源依据的声音锚点；如有明确指定的 voice 或 style guide，则在证据和使用场景的边界内套用。
 4. 对照原文、执行 author-swap test，并删除没有来源支持的新增内容。
 
 没有作者证据时，skill 会明确采用体裁默认值，不会为了让中性文本显得更像人而虚构人格。
@@ -72,6 +74,7 @@ npx skills add https://github.com/SemonCat/restore-author-voice
 - [`references/structure-and-discourse.md`](references/structure-and-discourse.md)：篇章结构、段落推进、节奏和修改深度
 - [`references/venue-guides.md`](references/venue-guides.md)：常见专业写作场景的规则
 - [`references/ai-patterns.md`](references/ai-patterns.md)：常见 AI 写作习惯的上下文信号
+- [`references/voice-composition.md`](references/voice-composition.md)：明确 voice／style guide 的优先级和冲突处理
 - [`references/en.md`](references/en.md)：英文地区惯例、标点、语域和声音边界
 - [`references/zh-tw.md`](references/zh-tw.md)：面向台湾读者的繁体中文规则
 - [`references/evaluation.md`](references/evaluation.md)：保真和模式验收
@@ -90,7 +93,7 @@ npx skills add https://github.com/SemonCat/restore-author-voice
 waza check .
 ```
 
-经过人工审查的案例覆盖正向 routing、相邻负向 trigger、事实保真、可直接粘贴到 Slack 的成稿、没有来源的反驳，以及文件中非正文区域的保护。
+经过人工审查的案例覆盖正向和相邻负向 routing、事实保真、明确 voice、voice／使用场景冲突、嵌入指令保持无效、可直接粘贴到 Slack 的成稿、没有来源的反驳，以及文件中非正文区域的保护。
 
 ## 致谢与许可
 
