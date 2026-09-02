@@ -1,0 +1,37 @@
+id: restore-author-voice-positive-file-boundaries
+name: Preserve non-prose file regions
+description: A Markdown rewrite should change prose without altering frontmatter, code, or link targets.
+tags:
+  - positive-trigger
+  - file-boundary
+inputs:
+  prompt: |
+    This is an eval. Do not use tools. Humanize only the prose in this Markdown file. Preserve frontmatter, code, and link targets exactly.
+
+    ---
+    title: "Cache rollout"
+    slug: cache-rollout
+    ---
+
+    This change is not just a cache improvement, but a pivotal step toward a more resilient platform.
+
+    Run:
+
+    ```sh
+    checkoutctl cache --mode=read-through
+    ```
+
+    See [the runbook](https://example.com/runbook?source=docs).
+expected:
+  should_trigger: true
+graders:
+  - type: code
+    name: keeps-structured-regions
+    config:
+      assertions:
+        - "'title: \"Cache rollout\"' in output"
+        - "'slug: cache-rollout' in output"
+        - "'checkoutctl cache --mode=read-through' in output"
+        - "'https://example.com/runbook?source=docs' in output"
+        - "'not just' not in output.lower()"
+        - "len(tool_calls) <= 1"

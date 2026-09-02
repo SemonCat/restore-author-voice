@@ -36,4 +36,4 @@ Make the title state the outcome or defect. Include only context the assignee la
 
 ### Technical articles and tutorials
 
-Open at the real problem, observation, or number that forced the question. Spend words unevenly where the work became interesting. Include real dead ends, runnable code or an explicit sketch disclaimer, numbers with conditions, and a recommendation with the condition that would change it. If no lived incident exists, use the honest genre rather than fabricating one.
+Open at the real problem, observation, or number that forced the question. Spend words unevenly where the work became interesting. Include real dead ends, runnable code or an explicit sketch disclaimer, numbers with conditions, and a recommendation with the condition that would change it. If no lived incident exists, use the honest genre rather than fabricating one. In reference docs and comments, describe current behavior; mention previous versions only when change is the subject.

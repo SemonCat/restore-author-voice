@@ -8,9 +8,9 @@ Watch for inflated significance, promotional haze, vague attribution, superficia
 
 ## Structure
 
-Watch for repeated “not X but Y” pivots, negative runways, forced groups of three, false ranges, rhetorical setup with an immediate answer, punch-line endings on every paragraph, uniform rhythm, summary sandwiches, excessive headings or bold-label lists, and false agency that hides who acted.
+Watch for repeated “not X but Y” pivots, negative runways, forced groups of three, false ranges, rhetorical setup with an immediate answer, punch-line endings on every paragraph, uniform rhythm, summary sandwiches, excessive headings or bold-label lists, headings restated below themselves, announcements of the next point, unsupported objections or fake alternatives, and false agency that hides who acted.
 
-Keep a real contrast, real three-part set, or passive voice when it expresses the meaning better.
+Keep a real contrast, real three-part set, passive voice, named objection, or plausible alternative when it expresses the meaning better. Delete a denial when no source or reader raised the claim. When an option exists only to be rejected, keep the chosen approach and its reason instead.
 
 ## Language
 

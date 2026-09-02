@@ -3,6 +3,7 @@
 This skill combines original workflow design with ideas from:
 
 - Hardik Pandya, [stop-slop](https://github.com/hardikpandya/stop-slop), MIT.
+- Blader, [humanizer](https://github.com/blader/humanizer), MIT. Adapted ideas include distinguishing real objections and alternatives from drafting debris, current-state documentation, protected file regions, and the fiction boundary.
 - Raymond Hou, [speak-human-tw](https://github.com/Raymondhou0917/speak-human-tw), MIT.
 - Cursor, [plugins](https://github.com/cursor/plugins), including the formerly indexed “unslop” skill, MIT.
 - Nanako0129, [Sepia](https://github.com/Nanako0129/sepia), MIT. Adapted ideas include deepest-layer-first revision, discourse checks, calibrated selection, and professional venue routing.

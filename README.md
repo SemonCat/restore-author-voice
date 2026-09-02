@@ -16,6 +16,8 @@ It treats style as evidence. A draft, explicit direction, or a set of attributab
 - repairs structural and paragraph-flow problems before polishing sentences
 - matches prose to its venue, including chat, release notes, developer replies, postmortems, tickets, and technical articles
 - returns ready-to-use copy without unrequested rewrite labels, editing notes, recaps, or generic follow-up offers
+- removes unsupported defenses and discarded alternatives while preserving real objections and decision options
+- protects code, data, frontmatter, and link targets when editing prose in a file
 - applies language-specific guidance for English and Traditional Chinese used in Taiwan
 
 The skill has four modes: `diagnose`, `cleanup`, `rewrite`, and `draft`. A cleanup should stay small. A rewrite can change the structure, but it still has to pass the same preservation checks.

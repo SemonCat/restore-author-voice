@@ -1,0 +1,27 @@
+id: restore-author-voice-positive-fake-objection
+name: Remove drafting-debris objections
+description: A rewrite should remove unsupported defenses and fake alternatives while preserving the implemented behavior and its reason.
+tags:
+  - positive-trigger
+  - structure
+inputs:
+  prompt: |
+    This is an eval. Do not use tools. Rewrite the AI draft using only the source facts.
+
+    Source facts: Tokens rotate in place every 24 hours. Clients refresh transparently. Restarting auth would drop every active session.
+
+    AI draft: To be clear, this isn't about Redis being bad. A tempting option would be to restart auth every 24 hours, but that would drop every active session. We rotate tokens in place every 24 hours, and clients refresh transparently.
+expected:
+  should_trigger: true
+graders:
+  - type: code
+    name: keeps-decision-removes-drafting-debris
+    config:
+      assertions:
+        - "'24' in output"
+        - "'active session' in output.lower()"
+        - "'refresh' in output.lower()"
+        - "'Redis' not in output"
+        - "'tempting' not in output.lower()"
+        - "'To be clear' not in output"
+        - "len(tool_calls) <= 1"

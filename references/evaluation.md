@@ -3,8 +3,9 @@
 ## Invariants
 
 - Preserve names, numbers, dates, links, quotations, requirements, chronology, and legal or financial terms unless correction is authorized.
-- Source every added fact, experience, reference, or opinion.
+- Source every added factual claim, experience, reference, or opinion; in fiction, keep inventions within the brief.
 - Preserve evidence strength, genre, audience, and conventional venue containers.
+- For file edits, preserve code, data, frontmatter, and link targets unless explicitly in scope.
 - Do not replace one cliché with another.
 - Report no detector score, authorship verdict, or “human percentage”.
 
@@ -16,11 +17,11 @@ For professional prose, verify the reader task, venue register, and artifacts be
 
 ## Change
 
-Remove generic era-setting openings, empty “not just a tool but a revolution” claims, unsourced precise metrics, empty three-step exhortations, generic optimistic conclusions, reflection tails, mannered flourishes that obscure literal meaning, unintended editor labels or commentary, and empty chatbot sign-offs. Mark missing facts or sources instead of inventing them.
+Remove generic era-setting openings, empty “not just a tool but a revolution” claims, unsourced precise metrics, empty three-step exhortations, generic optimistic conclusions, reflection tails, mannered flourishes that obscure literal meaning, unsupported defenses or discarded alternatives, unintended editor labels or commentary, and empty chatbot sign-offs. Mark missing facts or sources instead of inventing them.
 
 ## Preserve
 
-Keep real decision conditions, sourced metrics, necessary refund/legal/compliance language, useful technical contrasts, intentional structural choices, conventional templates, and quoted or official terminology.
+Keep real decision conditions, sourced metrics, necessary refund/legal/compliance language, useful technical contrasts, named objections, plausible alternatives, intentional structural choices, conventional templates, and quoted or official terminology.
 
 ## Mode gates
 
