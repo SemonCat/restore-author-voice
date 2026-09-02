@@ -1,34 +1,37 @@
 # restore-author-voice
 
-[繁體中文](README.zh-TW.md)
+English · [繁體中文](README.zh-TW.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [한국어](README.ko.md)
 
-`restore-author-voice` is an agent skill for drafting and editing prose without replacing the author with a generic "human" voice. It repairs the deepest damaged layer first: architecture, discourse, venue fit, then surface language.
-
-It treats style as evidence. A draft, explicit direction, or a set of attributable writing samples can show how an author makes claims, handles uncertainty, and moves through an argument. When that evidence is missing, the skill stays within the genre instead of inventing a persona.
+`restore-author-voice` rewrites prose without replacing the author with a generic “human” voice. It preserves facts, stance, uncertainty, quotations, and venue conventions, then repairs the deepest damaged layer first: structure, discourse, venue fit, and only then surface wording.
 
 ## What it does
 
-- drafts new prose from supplied or verified material
-- rewrites while preserving facts, stance, uncertainty, quotations, and constraints
-- diagnoses where editing erased useful authorship
-- removes common AI-writing patterns without turning them into a global blacklist
-- prefers literal wording when ornamental metaphor makes a sentence less precise
-- repairs structural and paragraph-flow problems before polishing sentences
-- matches prose to its venue, including chat, release notes, developer replies, postmortems, tickets, and technical articles
-- returns ready-to-use copy without unrequested rewrite labels, editing notes, recaps, or generic follow-up offers
-- removes unsupported defenses and discarded alternatives while preserving real objections and decision options
-- protects code, data, frontmatter, and link targets when editing prose in a file
-- applies language-specific guidance for English and Traditional Chinese used in Taiwan
+- preserves names, numbers, dates, links, quotations, requirements, chronology, positions, and meaningful contrasts
+- recovers traceable voice from the draft, explicit direction, or attributable writing samples
+- diagnoses architecture, paragraph flow, venue fit, and wording instead of treating every problem as a word-choice problem
+- removes common AI-writing patterns as contextual signals, not as a global blacklist
+- adapts prose for chat, release notes, developer discussions, incident reviews, tickets, and technical articles
+- returns ready-to-use copy without unrequested rewrite labels, recaps, or generic follow-up offers
+- protects code, data, frontmatter, and link targets when editing prose inside a file
+- includes dedicated guidance for English and Traditional Chinese written for Taiwan
 
-The skill has four modes: `diagnose`, `cleanup`, `rewrite`, and `draft`. A cleanup should stay small. A rewrite can change the structure, but it still has to pass the same preservation checks.
+## Modes
 
-## Why it works this way
+| Mode | Use it for | Editing boundary |
+|---|---|---|
+| `diagnose` | locating where meaning or voice was lost | reports problems without rewriting |
+| `cleanup` | removing obvious artifacts | keeps structural change small |
+| `rewrite` | repairing a draft with structural problems | may rebuild structure after locking evidence |
+| `draft` | writing from supplied or verified material | decides architecture and venue before wording |
 
-Removing a few stock phrases does not recover an author's voice. It can leave a shorter draft with the same machine-shaped structure and still sound interchangeable.
+## How it works
 
-This skill starts with source boundaries: what is fact, what is judgment, what remains uncertain, and which details cannot move. It then looks for author evidence in the wording and the material itself. The final author-swap test asks a blunt question: could the same passage appear under a plausible peer's name without changing anything?
+1. Define the reader, genre, venue, language, mode, and editing scope.
+2. Lock protected content and distinguish fact, inference, opinion, and quotation.
+3. Choose source-backed voice anchors, diagnose the deepest damaged layer, and revise from structure to wording.
+4. Compare the result with the source, run the author-swap test, and remove unsupported additions.
 
-That test is diagnostic, not a score. The skill does not optimize for AI detectors or report a "human percentage."
+When no author evidence exists, the skill uses an explicit genre default. It does not invent a persona to make neutral prose look more human.
 
 ## Install
 
@@ -38,45 +41,57 @@ Use the Agent Skills CLI:
 npx skills add https://github.com/SemonCat/restore-author-voice
 ```
 
-Or clone the repository and place it in a skill directory supported by your agent.
+You can also clone the repository and place it in a skill directory supported by your agent.
 
 ## Use
 
-Ask your agent to use `restore-author-voice`, then give it the draft or source material and the intended audience.
-
-Examples:
+Give the agent the source text, intended audience, venue, mode, and any content that must not change.
 
 ```text
 Use restore-author-voice in cleanup mode. Keep every number and quotation unchanged.
 ```
 
 ```text
-Rewrite this incident review for the engineering team. Preserve the timeline and uncertainty around the cause.
+Rewrite this incident review for the engineering team. Preserve the timeline and the uncertainty around the cause.
 ```
 
 ```text
-Draft a Traditional Chinese announcement for readers in Taiwan from these confirmed facts. Do not add a promotional conclusion.
+Diagnose why this sounds interchangeable, but do not rewrite it yet. Ask only questions that would materially change the result.
 ```
 
-For a recurring author or brand, start with [`templates/author-profile.md`](templates/author-profile.md). Build the profile from attributable samples, not guesses about personality.
+```text
+Rewrite only the prose in docs/launch.md. Leave frontmatter, code blocks, data, and link targets unchanged.
+```
+
+For recurring work with one author or brand, build a source-backed profile with [`templates/author-profile.md`](templates/author-profile.md).
 
 ## Repository layout
 
-- [`SKILL.md`](SKILL.md): modes, workflow, and hard guardrails
+- [`SKILL.md`](SKILL.md): workflow and guardrails
 - [`references/diagnostic-lens.md`](references/diagnostic-lens.md): identity, rhythm, semantics, genre, and the author-swap test
-- [`references/structure-and-discourse.md`](references/structure-and-discourse.md): architecture, paragraph questions, pacing, and depth decisions
+- [`references/structure-and-discourse.md`](references/structure-and-discourse.md): architecture, paragraph flow, pacing, and depth decisions
 - [`references/venue-guides.md`](references/venue-guides.md): rules for common professional writing venues
-- [`references/ai-patterns.md`](references/ai-patterns.md): diagnostic signals for common AI-writing habits
+- [`references/ai-patterns.md`](references/ai-patterns.md): contextual signals for common AI-writing habits
 - [`references/en.md`](references/en.md): English locale, mechanics, register, and voice boundaries
 - [`references/zh-tw.md`](references/zh-tw.md): Traditional Chinese guidance for readers in Taiwan
 - [`references/evaluation.md`](references/evaluation.md): preservation and mode checks
 - [`evals/restore-author-voice/eval.yaml`](evals/restore-author-voice/eval.yaml): reviewed positive and negative Waza regression cases
-- [`templates/author-profile.md`](templates/author-profile.md): a source-backed profile template
+- [`templates/author-profile.md`](templates/author-profile.md): an evidence-backed author profile template
 
 ## Boundaries
 
-The skill does not invent experiences, opinions, emotions, sources, or biographical details. It does not add slang, fragments, first person, or deliberate mistakes to make prose look human. Formal, neutral, or repetitive writing can be the right result when the author and genre call for it.
+The skill does not optimize for detector scores or report a “human percentage.” It does not add facts, quotations, experiences, opinions, slang, first person, or deliberate mistakes merely to appear human. Fiction may add details when invention is part of the creative brief. Formal, neutral, or repetitive prose can still be the correct result.
+
+## Evaluation
+
+Run the deterministic repository checks with:
+
+```bash
+waza check .
+```
+
+The reviewed cases cover positive routing, an adjacent negative trigger, fact preservation, Slack-ready delivery, unsupported objections, and non-prose file boundaries.
 
 ## Acknowledgements and license
 
-The diagnostic catalog draws on public work credited in [`references/attribution.md`](references/attribution.md). The repository is released under the [MIT License](LICENSE).
+Sources and adapted ideas are listed in [`references/attribution.md`](references/attribution.md). The repository is released under the [MIT License](LICENSE).
