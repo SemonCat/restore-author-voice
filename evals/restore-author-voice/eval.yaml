@@ -1,0 +1,25 @@
+name: restore-author-voice-eval
+description: Reviewed trigger-boundary and truth-preservation tests for author-voice restoration.
+skill: restore-author-voice
+version: "1.0"
+config:
+  trials_per_task: 1
+  timeout_seconds: 180
+  parallel: false
+  executor: copilot-sdk
+  model: gpt-5.4-mini
+metrics:
+  - name: truth_preservation
+    weight: 0.5
+    threshold: 0.8
+    description: Did the response preserve supplied facts and avoid invented humanizing details?
+  - name: voice_restoration
+    weight: 0.3
+    threshold: 0.8
+    description: Did the response restore specific author anchors instead of applying a generic humanizer voice?
+  - name: routing
+    weight: 0.2
+    threshold: 0.8
+    description: Did the skill trigger only for author-voice restoration or diagnosis requests?
+tasks:
+  - "tasks/*.yaml"

@@ -12,8 +12,10 @@
 - 改寫時保留事實、立場、不確定性、引用與限制
 - 診斷哪些編輯動作磨掉了真正有用的作者特徵
 - 清除常見 AI 寫作模式，但不把它們當成全域禁詞表
+- 當裝飾性比喻讓句子變得不精確時，優先使用字面表達
 - 先修復結構與段落推進，再調整句子表面
-- 依 release notes、開發討論、事故回顧、ticket 與技術文章等場域套用不同規則
+- 依聊天訊息、release notes、開發討論、事故回顧、ticket 與技術文章等場域套用不同規則
+- 預設只交付可直接使用的成稿，不自行加上改寫標籤、調整說明、重複總結或泛用邀請句
 - 依英文與台灣繁體中文套用不同的語言規則
 
 Skill 有四種模式：`diagnose`、`cleanup`、`rewrite`、`draft`。`cleanup` 應維持小幅修改；`rewrite` 可以調整結構，但仍要通過相同的保真檢查。
@@ -66,6 +68,7 @@ npx skills add https://github.com/SemonCat/restore-author-voice
 - [`references/en.md`](references/en.md)：英文地區慣例、標點、語域與聲音邊界
 - [`references/zh-tw.md`](references/zh-tw.md)：給台灣讀者的繁體中文規則
 - [`references/evaluation.md`](references/evaluation.md)：保真與模式驗收
+- [`evals/restore-author-voice/eval.yaml`](evals/restore-author-voice/eval.yaml)：經人工檢視的 Waza 正向、負向回歸案例
 - [`templates/author-profile.md`](templates/author-profile.md)：以來源為基礎的作者 profile 範本
 
 ## 邊界

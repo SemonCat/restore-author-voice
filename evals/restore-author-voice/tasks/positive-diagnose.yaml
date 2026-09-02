@@ -1,0 +1,22 @@
+id: restore-author-voice-positive-diagnose
+name: Diagnose without fabricating presence
+description: Diagnose generic prose without forcing questions or auto-inventing human details.
+tags:
+  - positive-trigger
+inputs:
+  prompt: |
+    這是 eval，不要使用工具。下面這段很像 AI 寫的，但先不要改。請診斷哪裡失去作者聲音；如果需要我的素材，最多問三個問題。
+
+    我們致力於透過創新技術賦能團隊，在快速變化的環境中持續創造價值。這項計畫不僅提升效率，也為未來發展奠定堅實基礎。
+expected:
+  should_trigger: true
+graders:
+  - type: code
+    name: diagnoses-without-fabrication
+    config:
+      assertions:
+        - "'抽象' in output or '具體' in output"
+        - "'判斷' in output or '取捨' in output or '立場' in output"
+        - "'\\n4.' not in output and '\\n4、' not in output and '\\n4)' not in output and '\\n4）' not in output and '\\n問題 4' not in output"
+        - "'昨天' not in output and '上週' not in output and '三小時' not in output"
+        - "len(tool_calls) <= 1"

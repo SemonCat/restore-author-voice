@@ -1,0 +1,25 @@
+id: restore-author-voice-positive-repair
+name: Restore voice from original anchors
+description: Repair an AI-polished paragraph using only facts present in the supplied original.
+tags:
+  - positive-trigger
+inputs:
+  prompt: |
+    這是 eval，不要使用工具。請把 AI 潤色稿改回像我寫的，不能編新細節；給成稿，再用兩點說明你保留了什麼。
+
+    我的原稿：凌晨兩點第一次跑全鏈路壓測，checkout 服務 57 秒後 timeout。我一開始以為是 database，最後才抓到 product API 裡一個同步 call。最煩的是 dashboard 全綠。
+
+    AI 潤色稿：本次測試過程中發現系統出現延遲問題。經過團隊深入分析，最終定位到外部依賴。此次事件凸顯了持續優化監控機制的重要性。
+expected:
+  should_trigger: true
+graders:
+  - type: code
+    name: preserves-real-anchors
+    config:
+      assertions:
+        - "'凌晨兩點' in output"
+        - "'57' in output"
+        - "'product API' in output"
+        - "'dashboard' in output.lower()"
+        - "'持續優化監控機制的重要性' not in output"
+        - "len(tool_calls) <= 1"

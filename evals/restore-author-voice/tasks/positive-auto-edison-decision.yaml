@@ -1,0 +1,25 @@
+id: restore-author-voice-positive-auto-edison-decision
+name: Auto-route Edison decision prose
+description: An author-owned technical decision should trigger without explicitly asking for humanization or naming the skill.
+tags:
+  - positive-trigger
+  - auto-route
+inputs:
+  prompt: |
+    這是 eval，不要使用工具。幫我整理成一段可以直接貼到 Confluence 的說明。
+
+    我覺得現在 callback 架構太繞，同一個狀態要經過兩條路徑才會落地。我的目標是收斂成單一路徑，但現階段要保留舊 callback 當 fallback，等一週觀察期沒有異常再移除。先說結論，再交代理由、風險與下一步。
+expected:
+  should_trigger: true
+graders:
+  - type: code
+    name: preserves-edison-decision-shape
+    config:
+      assertions:
+        - "'單一路徑' in output"
+        - "'fallback' in output.lower()"
+        - "'一週' in output"
+        - "'兩條路徑' in output or '雙路徑' in output or '兩個路徑' in output"
+        - "'結論' in output or output.find('單一路徑') < 160"
+        - "'賦能' not in output and '奠定堅實基礎' not in output"
+        - "len(tool_calls) <= 1"

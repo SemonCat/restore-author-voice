@@ -1,0 +1,25 @@
+id: restore-author-voice-positive-chat-clean-copy
+name: Return clean Slack-ready copy
+description: A chat rewrite should preserve operational facts while removing report framing, mannered prose, and editor commentary.
+tags:
+  - positive-trigger
+  - chat
+inputs:
+  prompt: |
+    這是 eval，不要使用工具。幫我把下面這段改成我會直接貼在 Slack 的訊息：
+
+    這次調整不只是修正 timeout，而是為 checkout 穩定性打下堅實基礎。建議先停 10% rollout，今天 20:30 前觀察 error rate，再決定是否恢復。
+expected:
+  should_trigger: true
+graders:
+  - type: code
+    name: preserves-facts-and-delivers-clean-copy
+    config:
+      assertions:
+        - "'10%' in output"
+        - "'20:30' in output"
+        - "'error rate' in output.lower()"
+        - "'打下堅實基礎' not in output"
+        - "'改寫後' not in output and '調整說明' not in output"
+        - "'如果需要' not in output and '如果你想' not in output"
+        - "len(tool_calls) <= 1"

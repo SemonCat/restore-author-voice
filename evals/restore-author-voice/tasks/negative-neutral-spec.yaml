@@ -1,0 +1,22 @@
+id: restore-author-voice-negative-neutral-spec
+name: Neutral technical formatting should not trigger
+description: A request for precise neutral documentation should stay outside author-voice restoration.
+tags:
+  - negative-trigger
+inputs:
+  prompt: |
+    這是 eval，不要使用工具。請把以下 API schema 整理成清楚、可稽核的條列；不要加入個人語氣或敘事。
+
+    checkout_id string required; retry_count integer optional default 0; created_at ISO-8601 required.
+expected:
+  should_trigger: false
+graders:
+  - type: code
+    name: preserves-neutral-documentation
+    config:
+      assertions:
+        - "'checkout_id' in output"
+        - "'retry_count' in output"
+        - "'created_at' in output"
+        - "'作者' not in output and '人味' not in output"
+        - "len(tool_calls) <= 1"

@@ -12,8 +12,10 @@ It treats style as evidence. A draft, explicit direction, or a set of attributab
 - rewrites while preserving facts, stance, uncertainty, quotations, and constraints
 - diagnoses where editing erased useful authorship
 - removes common AI-writing patterns without turning them into a global blacklist
+- prefers literal wording when ornamental metaphor makes a sentence less precise
 - repairs structural and paragraph-flow problems before polishing sentences
-- matches professional prose to its venue, including release notes, developer replies, postmortems, tickets, and technical articles
+- matches prose to its venue, including chat, release notes, developer replies, postmortems, tickets, and technical articles
+- returns ready-to-use copy without unrequested rewrite labels, editing notes, recaps, or generic follow-up offers
 - applies language-specific guidance for English and Traditional Chinese used in Taiwan
 
 The skill has four modes: `diagnose`, `cleanup`, `rewrite`, and `draft`. A cleanup should stay small. A rewrite can change the structure, but it still has to pass the same preservation checks.
@@ -66,6 +68,7 @@ For a recurring author or brand, start with [`templates/author-profile.md`](temp
 - [`references/en.md`](references/en.md): English locale, mechanics, register, and voice boundaries
 - [`references/zh-tw.md`](references/zh-tw.md): Traditional Chinese guidance for readers in Taiwan
 - [`references/evaluation.md`](references/evaluation.md): preservation and mode checks
+- [`evals/restore-author-voice/eval.yaml`](evals/restore-author-voice/eval.yaml): reviewed positive and negative Waza regression cases
 - [`templates/author-profile.md`](templates/author-profile.md): a source-backed profile template
 
 ## Boundaries

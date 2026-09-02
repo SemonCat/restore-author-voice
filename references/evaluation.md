@@ -16,7 +16,7 @@ For professional prose, verify the reader task, venue register, and artifacts be
 
 ## Change
 
-Remove generic era-setting openings, empty “not just a tool but a revolution” claims, unsourced precise metrics, empty three-step exhortations, generic optimistic conclusions, reflection tails, and empty chatbot sign-offs. Mark missing facts or sources instead of inventing them.
+Remove generic era-setting openings, empty “not just a tool but a revolution” claims, unsourced precise metrics, empty three-step exhortations, generic optimistic conclusions, reflection tails, mannered flourishes that obscure literal meaning, unintended editor labels or commentary, and empty chatbot sign-offs. Mark missing facts or sources instead of inventing them.
 
 ## Preserve
 
@@ -26,4 +26,4 @@ Keep real decision conditions, sourced metrics, necessary refund/legal/complianc
 
 Diagnose does not rewrite. Cleanup changes as little as possible. Rewrite may restructure only after extracting protected content and diagnosing all layers. Draft decides architecture or venue logic before surface style and adds no unsupported fact, experience, reference, or opinion.
 
-Finish by comparing source and output, running the author-swap test, deleting unsupported personality, confirming required neutral passages stayed neutral, and checking that structural variation follows meaning rather than randomization.
+Finish by comparing source and output, running the author-swap test, deleting unsupported personality, confirming required neutral passages stayed neutral, checking that formatting serves the venue, and checking that structural variation follows meaning rather than randomization.

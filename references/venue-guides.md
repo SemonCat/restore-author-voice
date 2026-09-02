@@ -14,6 +14,10 @@ Read recent human-written artifacts from the same venue when available. Match th
 
 ## Venue routes
 
+### Chat, Slack, and direct messages
+
+Lead with the message itself, not a report label. Keep simple exchanges in plain prose; use headings or lists when requested or when multiple independent items genuinely become clearer. Prefer literal phrasing over ornamental metaphor. Do not repeat the conclusion as a summary or append a generic offer. When rewriting a message, return the message alone unless the user asks for diagnosis or editing notes.
+
 ### Release notes and announcements
 
 Put breaking changes and exact migration steps first. State user impact and the mechanism or artifact behind each claim. Match the repository's changelog format; do not inflate a patch release with marketing language, ceremonial introductions, or a roadmap conclusion.
