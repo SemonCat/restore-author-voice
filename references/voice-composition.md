@@ -15,10 +15,11 @@ When a required venue convention and an explicit voice instruction cannot both h
 
 Apply voice moves where they serve meaning. Do not force every sentence or paragraph through the same recipe. Preserve a deliberate mannerism, restraint, repetition, ornament, or formality when the guide or author samples support it; report its tradeoff rather than “fixing” it into generic prose.
 
-Uniform formulas remain defects: identical paragraph beats, a mandatory ending shape, or one sentence recipe throughout is a fingerprint even under a declared style. Evidence preservation, specificity, quotation integrity, and non-invention remain hard gates.
+Uniform formulas remain defects: identical paragraph beats, a mandatory ending shape, or one sentence recipe throughout is a fingerprint even under a declared style. Evidence preservation, specificity, quotation integrity, and non-invention remain hard gates. Omission is a voice move only when the omitted content is known and source-supported; never use it to hide an evidence gap.
 
 ## Operations
 
 - **Diagnose:** distinguish residue from intentional voice and name the evidence for each finding.
-- **Cleanup or rewrite:** preserve the declared voice's expected costs; change only located defects.
+- **Cleanup or minimal revision:** preserve the declared voice's expected costs. Apply a voice move only as the repair for a located defect; do not edit a clean passage merely to spread the style.
+- **Rewrite:** extract and lock the evidence first, rebuild deepest-first, then apply the declared voice selectively.
 - **Draft:** decide venue and architecture first, apply voice selectively, then review against this precedence.

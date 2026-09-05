@@ -7,8 +7,10 @@ This skill combines original workflow design with ideas from:
 - Dietrich Gebert, [Ponytail](https://github.com/DietrichGebert/ponytail), MIT. Adapted evaluation ideas include same-agent baseline and control arms, isolated runs, artifact-level comparison, and separate correctness gates.
 - Raymond Hou, [speak-human-tw](https://github.com/Raymondhou0917/speak-human-tw), MIT.
 - Cursor, [plugins](https://github.com/cursor/plugins), including the formerly indexed “unslop” skill, MIT.
-- Nanako0129, [Sepia](https://github.com/Nanako0129/sepia), MIT. Adapted ideas include deepest-layer-first revision, discourse checks, calibrated selection, professional venue routing, untrusted-target boundaries, and explicit composition with declared voice skills.
+- Nanako0129, [Sepia](https://github.com/Nanako0129/sepia), MIT. Adapted ideas include deepest-layer-first revision, discourse checks, calibrated selection, professional venue routing, untrusted-target boundaries, explicit composition with declared voice skills, contextual sentence-rhythm checks, Chinese evidence limits, and defect-bound voice refactoring.
 - Wikipedia WikiProject AI Cleanup, [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), used as research.
+
+The rhythm and Chinese calibration were checked against Heather Desaire et al., [ChatGPT or academic scientist?](https://arxiv.org/abs/2303.16352); Adrián Gude et al., [More Aligned, Less Diverse?](https://arxiv.org/abs/2605.06030); and Junhui Zhu et al., [A Comparative Study of Language between Artificial Intelligence and Human](https://aclanthology.org/2023.ccl-1.46/).
 
 Sepia cites StoryScope and related studies for measured differences while marking many repair prescriptions as editorial inferences. This skill keeps that boundary: observed signals guide diagnosis but do not prove authorship or mandate an edit.
 

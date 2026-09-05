@@ -12,6 +12,10 @@ Compare stable habits across attributable samples: function words, transitions, 
 
 Match information pressure to purpose. Exposition may stay plain, evidence may become dense, and a real turn may justify a pause. End on the decision, consequence, action, or unresolved fact. Do not randomize sentence length.
 
+For paragraph-length running prose, inspect a run of three or more adjacent sentences that are roughly the same length only as a candidate signal when other diagnosed patterns cluster. Three is an editorial screening convention, not a measured cutoff. Do not run this check on one-line replies, lists, tables, or commit-style entries. Use no average-length target and do not treat punctuation frequency, paragraph count, or average paragraph length as model-agnostic evidence.
+
+When a uniform run weakens the prose, split, merge, move, or delete material according to meaning; never pad a sentence merely to manufacture variation.
+
 **Question:** Does rhythm track the reasoning, or is every sentence equally polished and emphatic?
 
 ## Semantics

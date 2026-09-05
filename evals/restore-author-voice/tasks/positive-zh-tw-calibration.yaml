@@ -1,0 +1,23 @@
+id: restore-author-voice-positive-zh-tw-calibration
+name: Separate Taiwan locale fit from AI evidence
+description: Chinese connective stacking may be diagnosed, while Mainland vocabulary is classified as a venue mismatch rather than proof of AI authorship.
+tags:
+  - positive-trigger
+  - zh-tw-calibration
+inputs:
+  prompt: |
+    這是 eval，不要使用工具。只診斷，不要改寫。這段會放在台灣使用者看的技術公告，請把語域問題和可能的 AI 寫作訊號分開說，不要判定作者身分。
+
+    此外，我們同時也進行了軟件更新，並且完成視頻處理優化，因此使用者將獲得更加流暢的體驗。
+expected:
+  should_trigger: true
+graders:
+  - type: code
+    name: separates-locale-and-patterns
+    config:
+      assertions:
+        - "'台灣' in output or '語域' in output or '在地化' in output"
+        - "'軟件' in output and '視頻' in output"
+        - "'此外' in output and ('同時' in output or '並且' in output or '因此' in output)"
+        - "'判定為 AI' not in output and '作者是 AI' not in output and '確定是 AI' not in output"
+        - "len(tool_calls) <= 1"

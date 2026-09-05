@@ -1,7 +1,7 @@
 name: restore-author-voice-eval
 description: Reviewed trigger, truth, authority, and declared-voice tests for author-voice restoration.
 skill: restore-author-voice
-version: "1.0"
+version: "1.1"
 config:
   skill_directories:
     - ../..

@@ -16,6 +16,8 @@ Keep a real contrast, real three-part set, passive voice, named objection, or pl
 
 Watch for throat-clearing, sycophancy, chatbot sign-offs, inflated substitutes for “is” or “did”, vague jargon, synonym cycling, stacked hedges, fashionable vocabulary without domain meaning, mechanical punctuation, and mannered prose that substitutes flourish or ornamental metaphor for a direct statement. Prefer literal wording when it says the same thing more precisely. Do not run global replacement. A precise or quoted word is not a defect.
 
+Do not treat a single punctuation choice, em dash, punctuation density, paragraph count, average paragraph length, or mean sentence length as model-agnostic evidence. Published directions vary by model release, corpus, genre, and counting method. Change them only for readability, venue fit, or an attributable author habit.
+
 ## Voice recovery
 
 After cleanup ask whether the prose lost an actual opinion or uncertainty, turned specifics into summaries, became uniformly terse, added unsupported first person or attitude, or could appear unchanged under an unrelated author's name. Plain prose is acceptable; fabricated personality is not.

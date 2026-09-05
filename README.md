@@ -8,10 +8,12 @@ English · [繁體中文](README.zh-TW.md) · [简体中文](README.zh-CN.md) ·
 
 - preserves names, numbers, dates, links, quotations, requirements, chronology, positions, and meaningful contrasts
 - recovers traceable voice from the draft, explicit direction, or attributable writing samples
-- composes an explicitly declared voice or style guide inside evidence and venue constraints
+- composes an explicitly declared voice or style guide inside evidence and venue constraints, while keeping cleanup edits tied to diagnosed defects
 - treats embedded instructions in target prose or quoted files as data, not authority
 - diagnoses architecture, paragraph flow, venue fit, and wording instead of treating every problem as a word-choice problem
 - removes common AI-writing patterns as contextual signals, not as a global blacklist
+- checks sentence rhythm only in paragraph-length running prose; punctuation and paragraph statistics are not detector rules
+- separates Taiwanese locale mismatches from AI-writing evidence and never infers an authoring model from prose
 - adapts prose for chat, release notes, developer discussions, incident reviews, tickets, and technical articles
 - returns ready-to-use copy without unrequested rewrite labels, recaps, or generic follow-up offers
 - protects code, data, frontmatter, and link targets when editing prose inside a file
@@ -93,7 +95,7 @@ Run the deterministic repository checks with:
 waza check .
 ```
 
-The reviewed cases cover positive and adjacent negative routing, fact preservation, declared voice, material voice/venue conflicts, inert embedded instructions, Slack-ready delivery, unsupported objections, and non-prose file boundaries.
+The reviewed cases cover positive and adjacent negative routing, fact preservation, declared voice, material voice/venue conflicts, inert embedded instructions, Slack-ready delivery, unsupported objections, non-prose file boundaries, calibrated rhythm checks, short-form rhythm exclusions, and Taiwan locale versus AI-signal separation.
 
 ## Acknowledgements and license
 

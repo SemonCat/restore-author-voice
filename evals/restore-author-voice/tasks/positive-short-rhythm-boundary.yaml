@@ -1,0 +1,24 @@
+id: restore-author-voice-positive-short-rhythm-boundary
+name: Skip rhythm scoring for a short list
+description: A short release-note list has no running-prose rhythm to score and must not be attributed to a model.
+tags:
+  - positive-trigger
+  - rhythm-boundary
+inputs:
+  prompt: |
+    This is an eval. Do not use tools. Check whether sentence-rhythm analysis applies to the following release-note bullets. If it does not, say why briefly. Do not rewrite them and do not infer who or what wrote them.
+
+    - Fixed timeout after 30s.
+    - Added retry_count metric.
+    - Removed deprecated flag.
+expected:
+  should_trigger: true
+graders:
+  - type: code
+    name: skips-short-form-rhythm
+    config:
+      assertions:
+        - "'rhythm' in output.lower()"
+        - "'not applicable' in output.lower() or 'does not apply' in output.lower() or 'too short' in output.lower() or 'insufficient' in output.lower() or 'list' in output.lower() or 'bullets' in output.lower() or 'standalone' in output.lower() or 'continuous prose' in output.lower()"
+        - "'GPT' not in output and 'Claude' not in output and 'Gemini' not in output"
+        - "len(tool_calls) <= 1"

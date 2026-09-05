@@ -1,0 +1,23 @@
+id: restore-author-voice-positive-rhythm-calibration
+name: Calibrate a rhythm diagnosis
+description: Uniform sentence length is a contextual editing signal, not an authorship verdict or numeric detector.
+tags:
+  - positive-trigger
+  - rhythm-calibration
+inputs:
+  prompt: |
+    這是 eval，不要使用工具。只診斷，不要改寫。有人說下面每句長度相近，而且用了破折號，所以一定是 AI 寫的。請評估這個判斷，指出真正可採用的編輯訊號。
+
+    部署窗口在晚上九點開始。第一批流量在九點十分進站。錯誤率在九點十五分升高。團隊在九點二十分停止 rollout。服務在九點二十八分恢復穩定——值班工程師繼續觀察。
+expected:
+  should_trigger: true
+graders:
+  - type: code
+    name: treats-rhythm-as-contextual
+    config:
+      assertions:
+        - "'句長' in output or '節奏' in output"
+        - "'候選' in output or '線索' in output or '訊號' in output"
+        - "'人類百分比' not in output and 'AI 機率' not in output and 'AI 概率' not in output"
+        - "'三句' not in output or '門檻' in output or '慣例' in output"
+        - "len(tool_calls) <= 1"
